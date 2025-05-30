@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   const handleClick = async () => {
-    const url = `/api/chat/186/messages`; // ← 기존의 IP 대신
+    const url = "https://api.sspoid.site/api/chat/186/messages";
 
     const data = {
       id: 0,
