@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function App() {
   const [id, setId] = useState("");
+  const [accessToken, setAccessToken] = useState("");
 
   const handleClick = async () => {
     const url = `https://api.sspoid.site/api/chat/${id}/messages`;
@@ -22,8 +23,7 @@ function App() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IndoaXRlc2VqaW5AbmF2ZXIuY29tIiwiaWF0IjoxNzQ4NTcwODAyLCJleHAiOjE3NDg1NzQ0MDJ9.vF1gTFf5D5P9nL0aFr1btzdr59wl34awk1b3spt7nRM",
+          Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify(data),
       });
@@ -60,6 +60,11 @@ function App() {
         onChange={(e) => {
           setId(e.target.value);
         }}
+      />
+      <input
+        type="text"
+        value={accessToken}
+        onChange={(e) => setAccessToken(e.target.value)}
       />
       <button id="btn" onClick={handleClick}>
         요청 보내기
