@@ -1,10 +1,13 @@
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [id, setId] = useState("");
+
   const handleClick = async () => {
-    const url = "https://api.sspoid.site/api/chat/186/messages";
+    const url = `https://api.sspoid.site/api/chat/${id}/messages`;
 
     const data = {
       id: 0,
@@ -51,6 +54,13 @@ function App() {
 
   return (
     <>
+      <input
+        type="number"
+        value={id}
+        onChange={(e) => {
+          setId(e.target.value);
+        }}
+      />
       <button id="btn" onClick={handleClick}>
         요청 보내기
       </button>
