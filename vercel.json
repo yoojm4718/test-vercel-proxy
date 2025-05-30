@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/chat/:id/messages",
+      "destination": "http://43.203.173.135:8080/api/chat/:id/messages"
+    }
+  ]
+}

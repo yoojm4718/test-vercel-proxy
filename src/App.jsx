@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   const handleClick = async () => {
-    const url = "http://43.203.173.135:8080/api/chat/174/messages";
+    const url = `/api/chat/186/messages`; // ← 기존의 IP 대신
 
     const data = {
       id: 0,
